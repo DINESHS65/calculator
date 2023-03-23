@@ -6,17 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
       .wrapper{
-        width: 350px;
-        height: 430px;
+        max-width: 320px;
+        height: 460px;
         margin: 50px auto;
         padding: 30px;
         background-color: rgb(0, 0, 0);
         border-radius: 30px;
+        overflow: hidden;
       }
       .main{
         margin: auto;
-        width: 300px;
+        max-width: 300px;
         height: 400px;
         background-color: white;
         display: flex;
@@ -25,21 +31,8 @@
         padding: 15px;
         border-radius: 30px;
         box-shadow: 10px 10px 10px rgb(112, 108, 108),
-        inset -7px -7px 10px rgb(224, 220, 220)
-      }
-      .btn{
-        width: 65px;
-        margin: 5px;
-        height: 50px;
-        font-size: medium;
-        font-weight: bold;
-        color: rgb(9, 151, 212);
-        background-color: white;
-        border: 1px solid rgb(202, 202, 202);
-        border-radius: 50px;
-        box-shadow: 5px 5px 5px rgb(196, 193, 193),
-        inset -5px -5px 10px rgb(242, 241, 241);
-      
+        inset -7px -7px 10px rgb(224, 220, 220);
+        overflow: hidden;
       }
       input{
         width: 100%;
@@ -56,10 +49,23 @@
         box-shadow: 7px 7px 10px rgb(196, 193, 193),
         inset -7px -7px 10px rgb(242, 241, 241);
       }
+      .btn{
+        width: 20%;
+        margin: 5px;
+        min-height: 40px;
+        font-size: medium;
+        font-weight: bold;
+        color: rgb(9, 151, 212);
+        background-color: white;
+        border: 1px solid rgb(202, 202, 202);
+        border-radius: 50px;
+        box-shadow: 5px 5px 5px rgb(196, 193, 193),
+        inset -5px -5px 10px rgb(242, 241, 241);
+      }
       .equal{
-        width: 120px;
-        margin: 5px 15px;
-        height: 50px;
+        width: 40%;
+        margin: 5px auto;
+        min-height: 40px;
         background-color: white;
         border: 1px solid rgb(202, 202, 202);
         border-radius: 50px;
@@ -73,14 +79,13 @@
         background-color: rgb(9, 151, 212);
        box-shadow:inset -0px -0px 10px rgb(242, 241, 241);
       color: white;}
-
     </style>
   </head>
   <body>
     <div class="wrapper">
       <div class="main">
         <input class="input" type="text" id="input" placeholder="0">
-        <button class="btn" onclick="cl()">CL</button>
+        <button class="btn" onmouseover="" onclick="cl()">CL</button>
         <button class="btn" onclick="del()">DEL</button>
         <button class="btn" onclick="display('%')">%</button>
         <button class="btn" onclick="display('/')">/</button>
