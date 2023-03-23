@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .wrapper{
+        width: 350px;
+        height: 430px;
+        margin: 50px auto;
+        padding: 30px;
+        background-color: rgb(0, 0, 0);
+        border-radius: 30px;
+      }
+      .main{
+        margin: auto;
+        width: 300px;
+        height: 400px;
+        background-color: white;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 15px;
+        border-radius: 30px;
+        box-shadow: 10px 10px 10px rgb(112, 108, 108),
+        inset -7px -7px 10px rgb(224, 220, 220)
+      }
+      .btn{
+        width: 65px;
+        margin: 5px;
+        height: 50px;
+        font-size: medium;
+        font-weight: bold;
+        color: rgb(9, 151, 212);
+        background-color: white;
+        border: 1px solid rgb(202, 202, 202);
+        border-radius: 50px;
+        box-shadow: 5px 5px 5px rgb(196, 193, 193),
+        inset -5px -5px 10px rgb(242, 241, 241);
+      
+      }
+      input{
+        width: 100%;
+        height: 90px;
+        margin: 0 0 5px 0;
+        font-size: 30px;
+        font-weight: bold;
+        background-color: white;
+        color: blue;
+        padding: 5px 20px;
+        text-align: end;
+        border: 1px solid rgb(202, 202, 202);
+        border-radius: 50px;
+        box-shadow: 7px 7px 10px rgb(196, 193, 193),
+        inset -7px -7px 10px rgb(242, 241, 241);
+      }
+      .equal{
+        width: 120px;
+        margin: 5px 15px;
+        height: 50px;
+        background-color: white;
+        border: 1px solid rgb(202, 202, 202);
+        border-radius: 50px;
+        box-shadow: 7px 7px 10px rgb(196, 193, 193),
+        inset -7px -7px 10px rgb(242, 241, 241);
+        color: blue;
+        font-size: medium;
+        font-weight: bold;
+      }
+      .btn:hover,.equal:hover{
+        background-color: rgb(9, 151, 212);
+       box-shadow:inset -0px -0px 10px rgb(242, 241, 241);
+      color: white;}
+
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="main">
+        <input class="input" type="text" id="input" placeholder="0">
+        <button class="btn" onclick="cl()">CL</button>
+        <button class="btn" onclick="del()">DEL</button>
+        <button class="btn" onclick="display('%')">%</button>
+        <button class="btn" onclick="display('/')">/</button>
+        <button class="btn" onclick="display('7')">7</button>
+        <button class="btn" onclick="display('8')">8</button>
+        <button class="btn" onclick="display('9')">9</button>
+        <button class="btn" onclick="display('*')">*</button>
+        <button class="btn" onclick="display('4')">4</button>
+        <button class="btn" onclick="display('5')">5</button>
+        <button class="btn" onclick="display('6')">6</button>
+        <button class="btn" onclick="display('-')">-</button>
+        <button class="btn" onclick="display('1')">1</button>
+        <button class="btn" onclick="display('2')">2</button>
+        <button class="btn" onclick="display('3')">3</button>
+        <button class="btn" onclick="display('+')">+</button>
+        <button class="btn" onclick="display('.')">.</button>
+        <button class="btn" onclick="display('0')">0</button>
+        <button class="equal" onclick="result()">=</button>
+      </div>
+    </div>
+    <script> 
+    let input=document.getElementById("input");
+    function display(num){
+      input.value+=num;
+    }
+    function result(){
+      try{input.value=eval(input.value)}
+      catch{alert("invalid")}
+    }
+    function cl(){
+    input.value="";
+    }
+    function del(){
+    input.value=input.value.slice(0,-1);
+    }
+    </script>
+  </body>
+</html>
